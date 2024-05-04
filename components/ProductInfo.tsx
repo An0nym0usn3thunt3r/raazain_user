@@ -47,9 +47,9 @@ const ProductInfo = ({ productInfo }: { productInfo: ProductType }) => {
       groupedProducts[color].image.push(image);
     }
 
-    const result = Object.values(groupedProducts);
-    console.log(result);
-    setProducts(result);
+    const hola = Object.values(groupedProducts) as Product[];
+    console.log(hola);
+    setProducts(hola);
   };
 
   useEffect(() => {
