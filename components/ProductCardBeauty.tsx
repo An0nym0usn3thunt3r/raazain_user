@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import HeartFavorite from "./HeartFavorite";
-import { Card, CardHeader, CardFooter } from "@nextui-org/react";
+import { Card, CardHeader, CardFooter, divider } from "@nextui-org/react";
 import { Button } from "./ui/button";
 import { title } from "process";
 import { Heart, ShoppingBagIcon, ShoppingBasket } from "lucide-react";
@@ -28,7 +28,6 @@ const ProductCardOtwo = ({ product, updateSignedInUser }: ProductCardProps ) => 
   const cart = useCart();
   return (
     <section>
-        {product.categories.map((category) => category.title === "BEAUTY & HEALTH") ? (
         <Link key={product._id} href={`/products/${product._id}`}>
         <Card shadow="sm" className='flex justify-between cursor-pointer relative w-[202px] h-[350px]'>
           <CardHeader>
@@ -64,8 +63,7 @@ const ProductCardOtwo = ({ product, updateSignedInUser }: ProductCardProps ) => 
             </div>
           </CardFooter>
         </Card>
-        </Link>) : ""}
-          
+        </Link>
     </section>
   );
 };

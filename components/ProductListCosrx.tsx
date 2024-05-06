@@ -12,11 +12,15 @@ const ProductListCosrx = async () => {
     <Carousel className="max-w-[82rem]  flex gap mx-auto pb-10">
             <CarouselContent className="flex mx-auto ">
           {products.map((product: ProductType) => (
-            <CarouselItem   className="grid grid-cols-1  sm:basis-1/2 md:basis-1/3 lg:basis-1/5 xl:basis-1/6">
-              <div className="mx-auto py-5">
+            <div>
+            {product.categories.some((category) => category.title === "COSRX Advanced Snail 92") ? (
+              <CarouselItem   className="lg:basis-1/3 xl:basis-1/6 -mx-5">
+              <div className="p-5">
             <ProductCardCosrx key={product._id} product={product}/>
             </div>
             </CarouselItem>
+            ) : ""}
+          </div>
           ))}
           </CarouselContent>
           </Carousel>

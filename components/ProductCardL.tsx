@@ -26,7 +26,7 @@ const ProductCardL = ({ product, updateSignedInUser }: ProductCardProps ) => {
   const cart = useCart();
   return (
     <section>
-        {product.categories.map((category) => category.title === "La-Roche Posay") ? (
+        {product.categories.some((category) => category.title === "LA-Roche Posay") ? (
         <Link key={product._id} href={`/products/${product._id}`}>
         <Card shadow="sm" className='flex justify-between cursor-pointer relative w-[202px] h-[350px]'>
           <CardHeader>

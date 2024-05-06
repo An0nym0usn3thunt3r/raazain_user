@@ -19,7 +19,7 @@ const Categories = async () => {
                 className="rounded-full cursor-pointer w-[100px] h-[100px] mb-2 flex items-center justify-center"
               />
               <p className="text-muted-foreground text-sm   text-center">{categories.title}</p>
-            </Link>
+            </Link> 
           ))}
         </div>
         </section>

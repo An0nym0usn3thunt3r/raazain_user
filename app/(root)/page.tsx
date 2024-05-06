@@ -20,7 +20,7 @@ export default function Home() {
       <NewsLetter />
       <Hero />
       <MarqueeComponent  />
-      {/* <LimitedOffer /> */}
+      <LimitedOffer />
       <Categories />
       <ProductListSpecial />
       <RelatedList />
@@ -28,7 +28,7 @@ export default function Home() {
       <ProductListOtwo />
       <ProductListCosrx />
       <ProductListOrdinary />
-      {/* <CallToAction /> */}
+      <CallToAction />
     </>
   );
 }

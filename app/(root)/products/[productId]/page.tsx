@@ -32,7 +32,7 @@ const ProductDetails = async ({ params }: { params: { productId: string }}) => {
     </div>
       </div>
       <ProductDescription productInfo={productDetails} />
-      <CommenSection />
+      <CommenSection productInfo={productDetails} />
     </section>
     </>
   )

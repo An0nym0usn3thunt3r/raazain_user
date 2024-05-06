@@ -22,6 +22,11 @@ const ProductCard = ({ product, updateSignedInUser }: ProductCardProps) => {
   // const [selectedSize, setSelectedSize] = useState<string>(
   //   product.size1
   // );
+  function calculateDiscountPercentage() : number {
+    const discountPercentage = (product.discount / product.price) * 100;
+    return +discountPercentage.toFixed(1);
+ }
+
 
   const [quantity, setQuantity] = useState<number>(1);
   const cart = useCart();
@@ -64,10 +69,10 @@ const ProductCard = ({ product, updateSignedInUser }: ProductCardProps) => {
           <div className="flex flex-row justify-between items-center gap-x-12">
             <div className="flex flex-row gap-x-2 justify-evenly">
               <h1 className="line-through  text-xs">Dhs. {product.discount}</h1>
-              <p className="text-xs text-primary">25%</p>
+              <p className="text-xs text-primary">{calculateDiscountPercentage()}%</p>
             </div>
             <div className="flex flex-row items-center ">
-              <p>4.5</p>
+              <p>{product.rattings}</p>
               <FaStar className="text-yellow-500" />
             </div>
           </div>

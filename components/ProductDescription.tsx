@@ -40,15 +40,18 @@ export const ProductDescription = ({ productInfo }: { productInfo: ProductType }
           </Tabs>
         </div>
       </div>
-      <div className="pt-20 flex ">
+      {productInfo.youtube ? (
+        <div className="pt-20 flex ">
         <iframe
           width="400"
           height="215"
-          src={`https://www.youtube.com/embed/`}
+          src={`https://www.youtube.com/embed/${productInfo.youtube}`}
           title="YouTube video player"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         ></iframe>
       </div>
+      ): ""}
+      
     </div>
     </section>
     <ProductPageRList />

@@ -9,7 +9,7 @@ import RelatedList from "./RelatedList"
 
 
 
-export const CommenSection = () => {
+export const CommenSection = ({ productInfo }: { productInfo: ProductType }) => {
   return (
     <>
     <div className='my-20 pt-5 max-w-full border-t '>
@@ -18,7 +18,8 @@ export const CommenSection = () => {
             <div className='flex flex-col pl-10 gap-y-5 mx-auto'>
                 <p className='text-2xl font-medium mt-10'>Overall Rating</p>
                 <div className="flex flex-row items-center space-x-1 gap-x-1">
-                <p className="text-xl font-medium">4.5</p>
+                <p className="text-xl font-medium">{productInfo.rattings}</p>
+                
                     {[...Array(5)].map(star => {
                         return <FaStar className="text-yellow-400" key={star} />
                     })}

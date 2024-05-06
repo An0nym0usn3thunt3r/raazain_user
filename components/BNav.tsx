@@ -2,6 +2,7 @@
 import { ChevronDown, MenuIcon } from 'lucide-react'
 import { Button } from './ui/button'
 import Link from 'next/link'
+import {Dropdown, DropdownTrigger, DropdownMenu, DropdownItem } from "@nextui-org/react";
 
 export const Bnav = () => {
   return (
@@ -15,9 +16,24 @@ export const Bnav = () => {
                 <Link href={'/blog'}>
                     Blog
                 </Link>
-                <Link href={'/categories'}>
-                    Categories
-                </Link>
+                <Dropdown>
+                    <DropdownTrigger>
+                        <Button variant='link1' size='sm' className='gap-x-2'
+                        >
+                        Categories <ChevronDown className='h-4 w-4' />
+                        </Button>
+                    </DropdownTrigger>
+                    <DropdownMenu aria-label="Static Actions">
+                        <DropdownItem key="new">New file</DropdownItem>
+                        <DropdownItem key="copy">Copy link</DropdownItem>
+                        <DropdownItem key="edit">Edit file</DropdownItem>
+                        <DropdownItem key="delete" className="text-danger">
+                            <Link href='/all-categories'>
+                                More Categories
+                            </Link>
+                        </DropdownItem>
+                    </DropdownMenu>
+                    </Dropdown>
                 <Link href={'/wishlist'}>
                     Wishlist
                 </Link>

@@ -40,7 +40,10 @@ type ProductType = {
   image: [string];
   categories: [CategoriesType];
   collections: [CollectionType];
-  subcollections: [CollectionType];
+  subcollections: [CollectionType];  
+  youtube: string;
+  rattings: number;
+  reviews: string;
   tags: [string];
   color1: string;
   color2: string;
@@ -82,6 +85,26 @@ type ProductType = {
   cp18: number;
   cp19: number;
   cp20: number;
+  dp1: number;
+  dp2: number;
+  dp3: number;
+  dp4: number;
+  dp5: number;
+  dp6: number;
+  dp7: number;
+  dp8: number;
+  dp9: number;
+  dp10: number;
+  dp11: number;
+  dp12: number;
+  dp13: number;
+  dp14: number;
+  dp15: number;
+  dp16: number;
+  dp17: number;
+  dp18: number;
+  dp19: number;
+  dp20: number;
   ci1: [string];
   ci2: [string];
   ci3: [string];
@@ -125,7 +148,6 @@ type ProductType = {
   createdAt: Date;
   updatedAt: Date;
 }
-
 
 type OrderColumnType = {
   _id: string;
@@ -188,12 +210,3 @@ type UserType = {
   createdAt: string;
   updatedAt: string;
 };
-
-type OrderType = {
-  shippingAddress: Object;
-  _id: string;
-  customerClerkId: string;
-  products: [OrderItemType]
-  shippingRate: string;
-  totalAmount: number
-}

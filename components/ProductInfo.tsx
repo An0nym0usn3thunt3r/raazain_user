@@ -112,7 +112,9 @@ const ProductInfo = ({ productInfo }: { productInfo: ProductType }) => {
       </div>
 
       <div className="flex flex-col gap-2">
-        <p className="text-base-medium text-grey-2">Colors:</p>
+        {productInfo.color1 === "" ? "" : (
+          <p className="text-base-medium text-grey-2">Colors:</p>
+        ) }
         <div className="flex gap-2">
           {products?.map((product, index) => (
             <p
@@ -131,7 +133,9 @@ const ProductInfo = ({ productInfo }: { productInfo: ProductType }) => {
       </div>
 
       <div className="flex flex-col gap-2">
-        <p className="text-base-medium text-grey-2">Sizes:</p>
+        {productInfo.size1 === "" ? "" : (
+          <p className="text-base-medium text-grey-2">Sizes:</p>
+        )}
         <div className="flex gap-2">
           {products &&
             products[selectedColor] &&

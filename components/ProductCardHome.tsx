@@ -28,7 +28,7 @@ const ProductCardHome = ({ product, updateSignedInUser }: ProductCardProps ) => 
   
   return (
     <section>
-        {product.categories.map((category) => category.title === "Home") ? (
+        {product.categories.some((category) => category.title === "Home") ? (
         <Link key={product._id} href={`/products/${product._id}`}>
         <Card shadow="sm" className='flex justify-between cursor-pointer relative w-[202px] h-[350px]'>
           <CardHeader>

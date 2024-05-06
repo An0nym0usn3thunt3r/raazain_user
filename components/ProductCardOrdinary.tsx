@@ -26,7 +26,7 @@ const ProductCardOrdinary = ({
 
   return (
     <section>
-      {product.categories.map((category) => category.title === "The Ordinary") ? (
+      {product.categories.some((category) => category.title === "The Ordinary") ? (
         <Link key={product._id} href={`/products/${product._id}`}>
           <Card
             shadow="sm"
