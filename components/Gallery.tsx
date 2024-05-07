@@ -22,7 +22,7 @@ const Gallery = ({ productMedia }: { productMedia: string[] }) => {
         alt="product"
         className="w-96 h-[326px] rounded-lg shadow-xl object-cover"
       />
-      <div className="flex gap-2 overflow-auto tailwind-scrollbar-hide">
+      <div className="flex gap-2 overflow-auto tailwind-scrollbar-hide mx-auto">
         <Carousel className="w-full overflow-hidden max-w-[250px] mx-auto">
           <CarouselContent>
             {productMedia.map((image, index) => (

@@ -24,7 +24,7 @@ const ProductDetails = async ({ params }: { params: { productId: string }}) => {
     <div className="flex flex-col lg:flex-row justify-between  mx-auto gap-16 py-10 ">
       <Gallery productMedia={productDetails.image} />
       <ProductInfo productInfo={productDetails} />
-      <div className='flex flex-col space-y-9 overflow-y-scroll h-[28rem] mx-auto'>
+      <div className='flex flex-col space-y-9 overflow-y-auto tailwind-scrollbar-hide h-[28rem] mx-auto'>
       <p className="text-2xl font-bold text-indigo-950">Best Sellers</p>
         {relatedProducts?.map((product: ProductType) => (
           <RelatedCard key={product._id} product={product} />
