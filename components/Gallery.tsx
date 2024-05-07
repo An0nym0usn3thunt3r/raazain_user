@@ -20,11 +20,11 @@ const Gallery = ({ productMedia }: { productMedia: string[] }) => {
         width={500}
         height={500}
         alt="product"
-        className="w-96 h-[326px] rounded-lg shadow-xl object-cover"
+        className="w-96 h-[326px] rounded-lg shadow-xl object-cover mx-auto lg:mx-0"
       />
-      <div className="flex gap-2 overflow-auto tailwind-scrollbar-hide mx-auto">
-        <Carousel className="w-full overflow-hidden max-w-[250px] mx-auto">
-          <CarouselContent>
+      <div className="flex gap-2 overflow-auto tailwind-scrollbar-hide ">
+        <Carousel className="w-full overflow-hidden max-w-[250px] ">
+          <CarouselContent className="mx-auto">
             {productMedia.map((image, index) => (
               <CarouselItem className="basis-1/4">
                 <Image
