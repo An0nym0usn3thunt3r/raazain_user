@@ -5,6 +5,7 @@ import Gallery from "@/components/Gallery"
 import ProductCard from "@/components/ProductCard"
 import { ProductDescription } from "@/components/ProductDescription"
 import ProductInfo from "@/components/ProductInfo"
+import ProductPageRList from "@/components/ProductPageRList"
 import RelatedCard from "@/components/RelatedCard"
 import { getProductDetails, getRelatedProducts } from "@/lib/actions/actions"
 import { BreadcrumbItem, Breadcrumbs } from "@nextui-org/react"
@@ -33,6 +34,7 @@ const ProductDetails = async ({ params }: { params: { productId: string }}) => {
       </div>
       <ProductDescription productInfo={productDetails} />
       <CommenSection productInfo={productDetails} />
+      <ProductPageRList />
     </section>
     </>
   )

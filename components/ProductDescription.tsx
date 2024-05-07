@@ -54,7 +54,6 @@ export const ProductDescription = ({ productInfo }: { productInfo: ProductType }
       
     </div>
     </section>
-    <ProductPageRList />
     </>
   );
 };
