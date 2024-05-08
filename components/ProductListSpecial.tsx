@@ -53,7 +53,7 @@ const ProductListSpecial = async () => {
             <CarouselContent className="flex mx-auto ">
           {products.map((product: ProductType) => (
             <div>
-            {product.categories.some((category) => category.title === "O.TWO.O COSMETICS") ? (
+            {product.categories.some((category) => category.title === "O.TWO.O Cosmetics") ? (
               <CarouselItem   className="lg:basis-1/3 xl:basis-1/6 -mx-5">
               <div className="p-5">
             <ProductCardOtwo key={product._id} product={product}/>
@@ -76,7 +76,7 @@ const ProductListSpecial = async () => {
             <CarouselContent className="flex mx-auto ">
           {products.map((product: ProductType) => (
            <div>
-           {product.categories.some((category) => category.title === "Beauty & Health") ? (
+           {product.categories.some((category) => category.title === "HOME DECORE APPLIANCES") ? (
              <CarouselItem   className="lg:basis-1/3 xl:basis-1/6 -mx-5">
              <div className="p-5">
            <ProductCardHome key={product._id} product={product}/>

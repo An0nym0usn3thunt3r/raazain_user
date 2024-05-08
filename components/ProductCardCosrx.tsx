@@ -27,7 +27,7 @@ const ProductCardCosrx = ({ product, updateSignedInUser }: ProductCardProps ) =>
   
   return (
     <section>
-        {product.categories.some((category) => category.title === "COSRX Advanced Snail 92") ? (
+        {product.collections.some((category) => category.title === "COSRX ADVANCED") ? (
         <Link key={product._id} href={`/products/${product._id}`}>
         <Card shadow="sm" className='flex justify-between cursor-pointer relative w-[202px] h-[350px]'>
           <CardHeader>

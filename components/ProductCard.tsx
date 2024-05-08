@@ -16,12 +16,12 @@ interface ProductCardProps {
 }
 
 const ProductCard = ({ product, updateSignedInUser }: ProductCardProps) => {
-  // const [selectedColor, setSelectedColor] = useState<string>(
-  //   product.color1
-  // );
-  // const [selectedSize, setSelectedSize] = useState<string>(
-  //   product.size1
-  // );
+  const [selectedColor, setSelectedColor] = useState<string>(
+    product.color1
+  );
+  const [selectedSize, setSelectedSize] = useState<string>(
+    product.size1
+  );
   function calculateDiscountPercentage() : number {
     const discountPercentage = (product.discount / product.price) * 100;
     return +discountPercentage.toFixed(1);
@@ -52,14 +52,14 @@ const ProductCard = ({ product, updateSignedInUser }: ProductCardProps) => {
           </div>
           <div className="absolute bottom-[40px]  right-14">
             <Button variant="outline" size="icons">
-              {/* <ShoppingBagIcon onClick={() => {
+              <ShoppingBagIcon onClick={() => {
           cart.addItem({
             item: product,
             quantity,
             color: selectedColor,
             size: selectedSize,
           });
-        }} className="text-primary h-5 w-5"/> */}
+        }} className="text-primary h-5 w-5"/>
             </Button>
           </div>
         </CardHeader>

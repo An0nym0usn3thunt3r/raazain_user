@@ -13,7 +13,7 @@ const RelatedList = async () => {
             <CarouselContent className="flex mx-auto ">
           {products.map((product: ProductType) => (
             <div>
-            {product.categories.some((category) => category.title === "LA-Roche Posay") ? (
+            {product.collections.some((category) => category.title === "LA ROCHE POSAY") ? (
               <CarouselItem   className="lg:basis-1/3 xl:basis-1/6 -mx-5">
               <div className="p-5">
             <ProductCardL key={product._id} product={product}/>
