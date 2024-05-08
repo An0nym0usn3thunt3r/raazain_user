@@ -10,12 +10,6 @@ export const Bnav = () => {
         <div className='h-12  flex flex-row justify-start max-w-[82rem] px-4 mx-auto'>
             <div className='flex flex-row items-center gap-x-10 text-white'>
                 <div className='md:flex hidden  flex-row items-center gap-x-10'>
-                <Link href={'/'}>
-                    Home
-                </Link>
-                <Link href={'/blog'}>
-                    Blog
-                </Link>
                 <Dropdown>
                     <DropdownTrigger>
                         <Button variant='link1' size='sm' className='gap-x-2'
@@ -34,6 +28,12 @@ export const Bnav = () => {
                         </DropdownItem>
                     </DropdownMenu>
                     </Dropdown>
+                <Link href={'/'} className='-ml-5'>
+                    Home
+                </Link>
+                <Link href={'/blog'}>
+                    Blog
+                </Link>
                 <Link href={'/wishlist'}>
                     Wishlist
                 </Link>

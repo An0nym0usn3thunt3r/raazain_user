@@ -7,10 +7,13 @@ import { MinusCircle, PlusCircle } from "lucide-react";
 import useCart from "@/lib/hooks/useCart";
 import { Button } from "./ui/button";
 import Categories from "./Categories";
+import { CartSidebar1 } from "./CartSidebar1";
+import Gallery from "./Gallery";
 
 interface Product {
   color: string;
   price: number[];
+  discount: number[];
   size: string[];
   image: string[][];
 }
@@ -25,45 +28,82 @@ const ProductInfo = ({ productInfo }: { productInfo: ProductType }) => {
     let products: any = productInfo;
     const groupedProducts: any = {};
 
-    for (let i = 1; i <= 5; i++) {
+    for (let i = 1; i <= 20; i++) {
       const color = products[`color${i}`];
       const price = products[`cp${i}`];
+      const discount = products[`discount${i}`];
       const size = products[`size${i}`];
       const image = products[`ci${i}`];
 
-      if (!groupedProducts[color]) {
+      if (!groupedProducts[color] && color !== "") {
         groupedProducts[color] = {
           color: color,
           price: [],
+          discount: [],
           size: [],
           image: [],
         };
       }
 
-      groupedProducts[color].price.push(price);
-      if (!groupedProducts[color].size.includes(size)) {
-        groupedProducts[color].size.push(size);
+      groupedProducts[color]?.price.push(price);
+      if (!groupedProducts[color]?.size.includes(size)) {
+        groupedProducts[color]?.size.push(size);
       }
-      groupedProducts[color].image.push(image);
+      if (!groupedProducts[color]?.discount.includes(discount)) {
+        groupedProducts[color]?.discount.push(discount);
+      }
+      groupedProducts[color]?.image.push(image);
     }
 
     const hola = Object.values(groupedProducts) as Product[];
+    console.log("\n\n\nhola");
     console.log(hola);
     setProducts(hola);
   };
 
+  // function calculateDiscountPercentage(): number {
+  //   // (price - price * (discount_percentage / 100)) / price * 100
+  //   const price = products[selectedColor]?.price[selectedSize] | productInfo.price;
+  //   const discount = productInfo.discount;
+  //   const discountPercentage = 100 - ( price / discount) * 100;
+  //   return +discountPercentage.toFixed(0);
+  // }
+
+  function calculateDiscountPercentage(): number {
+    const price = products && products[selectedColor] ? products[selectedColor].price[selectedSize] : productInfo.price;
+    const discount = products && products[selectedColor] ? products[selectedColor].discount[selectedSize] : productInfo.discount;
+    const discountPercentage = 100 - (price / productInfo.discount) * 100;
+    return +discountPercentage.toFixed(0);
+  }
+
   useEffect(() => {
     console.log("\n\n\n state products");
     console.log(products);
+
+    // selectedColor === 0 ? productInfo.image : products[selectedColor].image 
+    console.log("\n\n\nproductInfo.image")
+    console.log(productInfo.image)
+    console.log(typeof(productInfo.image))
+    console.log("\n\n\nproducts")
+    console.log(products[selectedColor]?.image)
+    console.log(typeof(products[selectedColor]?.image))
+
   }, [products]);
 
   useEffect(() => {
     handleArray();
   }, []);
 
+  useEffect(()=>{
+    console.log("\n\n\nselectedColor")
+    console.log(selectedColor)
+  }, [selectedColor])
+
   const cart = useCart();
 
   return (
+  <>
+      <Gallery productMedia={products && products.length > 0 && (products[0].color !== "-" || products.length > 1) ? products[selectedColor].image[0] : productInfo.image} />
     <div className="max-w-[500px] flex flex-col gap-2 mx-auto">
       <div className="flex justify-between items-center">
         <p className="text-lg font-medium">{productInfo.title}</p>
@@ -101,22 +141,25 @@ const ProductInfo = ({ productInfo }: { productInfo: ProductType }) => {
           {productInfo.description}
         </p>
         <p className="text-2xl font-semibold text-primary">
-          Dhs. {products && products[selectedColor] && products[selectedColor].price[selectedSize]}
+          Dhs. {products && products[selectedColor] ? products[selectedColor].price[selectedSize] : productInfo.price}
         </p>
-        <div className="flex flex-row items-center gap-x-2">
+        {productInfo.discount === 0 || productInfo.discount === 0.1 ? "" : (
+          <div className="flex flex-row items-center gap-x-2">
           <p className="text-xs line-through text-muted-foreground">
             Dhs. {productInfo.discount}
           </p>
-          <p className="text-sm text-primary">21% OFF</p>
+          <p className="text-sm text-primary">{calculateDiscountPercentage()}% OFF</p>
         </div>
+        )}
       </div>
 
       <div className="flex flex-col gap-2">
-        {productInfo.color1 === "" ? "" : (
-          <p className="text-base-medium text-grey-2">Colors:</p>
-        ) }
+        {products && products.length > 0 && (products[0].color !== "-" || products.length > 1) ? (
+          <p className="text-base-medium text-grey-2">Colors: </p>
+        ): "" }
         <div className="flex gap-2">
           {products?.map((product, index) => (
+            product.color !== "-" && 
             <p
               className={`border border-primary px-2 py-1 rounded-lg cursor-pointer ${
                 selectedColor === index && "bg-primary text-white"
@@ -171,21 +214,10 @@ const ProductInfo = ({ productInfo }: { productInfo: ProductType }) => {
       </div>
       <div className="flex flex-row gap-x-5 mt-3 rounded-lg">
         <Button>Buy Now</Button>
-        <Button
-          className=" hover:bg-primary hover:text-white"
-          onClick={() => {
-            cart.addItem({
-              item: productInfo,
-              quantity,
-              color: products && products[selectedColor] && products[selectedColor].color,
-              size: products && products[selectedColor] && products[selectedColor].size[selectedSize],
-            });
-          }}
-        >
-          Add To Cart
-        </Button>
+        <CartSidebar1 productInfo={productInfo} />
       </div>
     </div>
+    </>
   );
 };
 

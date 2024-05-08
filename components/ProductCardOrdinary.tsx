@@ -24,9 +24,15 @@ const ProductCardOrdinary = ({
   const [quantity, setQuantity] = useState<number>(1);
   const cart = useCart();
 
+  function calculateDiscountPercentage(): number {
+    const discountPercentage = 100 - (product.price / product.discount) * 100;
+    return +discountPercentage.toFixed(0);
+  }
   return (
     <section>
-      {product.collections.some((category) => category.title === "THE ORDINARY PRODUCTS") ? (
+      {product.collections.some(
+        (category) => category.title === "THE ORDINARY PRODUCTS"
+      ) ? (
         <Link key={product._id} href={`/products/${product._id}`}>
           <Card
             shadow="sm"
@@ -66,12 +72,18 @@ const ProductCardOrdinary = ({
               <h1 className="text-sm line-clamp-1 pb-1">{product.title}</h1>
               <p className="text-primary font-medium">Dhs. {product.price}</p>
               <div className="flex flex-row justify-between items-center gap-x-12">
-                <div className="flex flex-row gap-x-2 justify-evenly">
-                  <h1 className="line-through  text-xs">
-                    Dhs. {product.discount}
-                  </h1>
-                  <p className="text-xs text-primary">25%</p>
-                </div>
+              {product.discount === 0 || product.discount === 0.1 ? (
+                <div className="w-[80px]"></div>
+              ) : (
+              <div className="flex flex-row gap-x-2 justify-evenly">
+              <h1 className="line-through  text-xs ">
+                Dhs. {product.discount}
+              </h1>
+              <span className="text-primary text-xs">
+                {calculateDiscountPercentage()}%
+              </span>
+            </div>
+            )}
                 <div className="flex flex-row items-center ">
                   <p>4.5</p>
                   <FaStar className="text-yellow-500" />
