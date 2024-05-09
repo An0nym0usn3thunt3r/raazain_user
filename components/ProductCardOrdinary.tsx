@@ -40,6 +40,7 @@ const ProductCardOrdinary = ({
           >
             <CardHeader>
               <Image
+                unoptimized
                 width={300}
                 height={300}
                 src={product.image[0]}

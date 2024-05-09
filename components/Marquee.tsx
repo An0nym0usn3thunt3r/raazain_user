@@ -20,6 +20,7 @@ export const MarqueeComponent = async () => {
                 height={70}
                 width={70}
                 className="rounded-lg"
+                unoptimized
               />
               <div className="flex flex-col ml-2">
                 <p className="text-sm font-medium text-muted-foreground line-clamp-1 mt-2 hover:text-primary w-[180px]">

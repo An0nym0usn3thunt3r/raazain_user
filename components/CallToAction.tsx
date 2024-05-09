@@ -11,7 +11,7 @@ export const CallToAction = () => {
             {calltoaction.map((call) => (
             <Card key={call.title} className='flex flex-col items-center'>
                 <CardHeader>    
-                    <Image className='rounded-md' src={call.src} alt='' width={150} height={150} />
+                    <Image unoptimized className='rounded-md' src={call.src} alt='' width={150} height={150} />
                 </CardHeader>
                 <CardContent>
                     <div className='flex flex-col items-center'>

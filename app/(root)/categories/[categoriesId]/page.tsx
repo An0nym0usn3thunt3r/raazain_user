@@ -16,6 +16,7 @@ const CategoriesDetails = async ({
   return (
     <div className="px-10 py-5 flex flex-col items-center gap-8">
       <Image
+        unoptimized
         src={categoriesDetails.image[0]}
         width={1500}
         height={1000}

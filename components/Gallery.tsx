@@ -20,6 +20,7 @@ const Gallery = ({ productMedia }: { productMedia: string[] }) => {
   return (
     <div className="flex flex-col gap-3 mx-auto w-[600px]">
       <Image
+        unoptimized
         src={mainImage}
         width={500}
         height={500}

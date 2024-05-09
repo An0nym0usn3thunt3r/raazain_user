@@ -13,6 +13,7 @@ const AllCategories = async () => {
           {categories.map((categories: CategoriesType) => (
             <Link href={`/all-categories/${categories._id}`} key={categories._id} className="flex flex-col justify-center items-center gap-y-2 mt-8 ">
               <Image
+                unoptimized
                 key={categories._id}
                 src={categories.image[0]}
                 alt={categories.title}

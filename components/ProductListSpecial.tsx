@@ -22,7 +22,7 @@ const ProductListSpecial = async () => {
                 <TabsTrigger value="home">Home Decor</TabsTrigger>
             </TabsList>
           <TabsContent value="beauty" className="relative top-0 ">
-            <Image src={'/45.jpeg'} alt="" height={445} width={1378} className="w-[1378px] h-[445px] absolute"/>
+            <Image unoptimized src={'/45.jpeg'} alt="" height={445} width={1378} className="w-[1378px] h-[445px] absolute"/>
             <div className="flex flex-row justify-between">
               <div></div>
               <div>
@@ -45,7 +45,7 @@ const ProductListSpecial = async () => {
           </div>
           </TabsContent>
           <TabsContent value="cosmetics" className="relative top-0 ">
-          <Image src={'/45.jpeg'} alt="" height={445} width={1378} className="w-[1378px] h-[445px] absolute"/>
+          <Image unoptimized src={'/45.jpeg'} alt="" height={445} width={1378} className="w-[1378px] h-[445px] absolute"/>
           <div className="flex flex-row justify-between">
               <div></div>
               <div>
@@ -68,7 +68,7 @@ const ProductListSpecial = async () => {
           </div>
           </TabsContent>
           <TabsContent value="home" className="relative top-0 ">
-          <Image src={'/45.jpeg'} alt="" height={445} width={1378} className="w-[1378px] h-[445px] absolute"/>
+          <Image unoptimized src={'/45.jpeg'} alt="" height={445} width={1378} className="w-[1378px] h-[445px] absolute"/>
           <div className="flex flex-row justify-between">
               <div></div>
               <div>

@@ -26,8 +26,8 @@ const ProductListOtwo = async () => {
           </CarouselContent>
           </Carousel>
           <div className='flex flex-col lg:flex-row gap-y-4 my-20  max-w-[82rem] mx-auto  gap-x-10 items-center px-6'>
-          <Image width={620} height={300} className='cursor-pointer rounded-xl w-[200] h-[50]' src='/men.webp' alt='category' />
-          <Image width={620} height={300} className='cursor-pointer rounded-xl w-[200] h-[50]' src='/women.webp' alt='category' />
+          <Image unoptimized width={620} height={300} className='cursor-pointer rounded-xl w-[200] h-[50]' src='/men.webp' alt='category' />
+          <Image unoptimized width={620} height={300} className='cursor-pointer rounded-xl w-[200] h-[50]' src='/women.webp' alt='category' />
         </div>
     </>
   );

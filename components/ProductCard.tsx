@@ -33,6 +33,7 @@ const ProductCard = ({ product, updateSignedInUser }: ProductCardProps) => {
       >
         <CardHeader>
           <Image
+            unoptimized
             width={300}
             height={300}
             src={product.image[0]}
