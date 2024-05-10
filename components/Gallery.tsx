@@ -18,7 +18,7 @@ const Gallery = ({ productMedia }: { productMedia: string[] }) => {
   }, [])
 
   return (
-    <div className="flex flex-col gap-3 mx-auto w-[500px]">
+    <div className="flex flex-col gap-3 mx-auto w-[550px]">
       <Image
         unoptimized
         src={mainImage}
