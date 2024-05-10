@@ -18,14 +18,14 @@ const Gallery = ({ productMedia }: { productMedia: string[] }) => {
   }, [])
 
   return (
-    <div className="flex flex-col gap-3 mx-auto w-[600px]">
+    <div className="flex flex-col gap-3 mx-auto w-[500px]">
       <Image
         unoptimized
         src={mainImage}
         width={500}
         height={500}
         alt="product"
-        className="w-96 h-[395px] rounded-lg shadow-xl object-cover mx-auto lg:mx-0"
+        className="w-96 h-[400px] rounded-lg shadow-xl object-cover mx-auto lg:mx-0"
       />
       <div className="flex gap-2 overflow-auto tailwind-scrollbar-hide ">
         <Carousel className="w-full overflow-hidden">
