@@ -104,7 +104,7 @@ const ProductInfo = ({ productInfo }: { productInfo: ProductType }) => {
   return (
   <>
       <Gallery productMedia={products && products.length > 0 && (products[0].color !== "-" || products.length > 1) ? products[selectedColor].image[0] : productInfo.image} />
-    <div className="max-w-[500px] flex flex-col gap-2 mx-auto">
+    <div className="max-w-[350px] flex flex-col gap-2 mx-auto">
       <div className="flex justify-between items-center">
         <p className="text-lg font-medium">{productInfo.title}</p>
         <HeartFavorite product={productInfo} />
