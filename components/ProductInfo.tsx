@@ -157,7 +157,7 @@ const ProductInfo = ({ productInfo }: { productInfo: ProductType }) => {
         {products && products.length > 0 && (products[0].color !== "-" || products.length > 1) ? (
           <p className="text-base-medium text-grey-2">Colors: </p>
         ): "" }
-        <div className="flex gap-2">
+        <div className="grid grid-cols-3 gap-2">
           {products?.map((product, index) => (
             product.color !== "-" && 
             <p
